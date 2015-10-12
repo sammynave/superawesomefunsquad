@@ -1,5 +1,6 @@
-{{#each model as |post|}}
-  <h4>{{post.title}}</h4>
-  <p>{{post.body}}</p>
-{{/each}}
+<ul>
+  {{#each model as |post|}}
+  <li>{{#link-to "posts.post" post}}{{post.title}}{{/link-to}}</li>
+  {{/each}}
+</ul>
 {{outlet}}

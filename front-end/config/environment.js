@@ -1,5 +1,4 @@
 /* jshint node: true */
-
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'front-end',
@@ -19,12 +18,14 @@ module.exports = function(environment) {
     }
   };
 
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.API_HOST = 'http://localhost:3000';
   }
 
   if (environment === 'test') {
@@ -42,6 +43,16 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
+
+  ENV.contentSecurityPolicy = {
+    "default-src": "'none'",
+    "script-src": "'self'",
+    "font-src": "'self'",
+    "connect-src": "'self' " + ENV.APP.API_HOST,
+    "img-src": "'self' " + ENV.APP.API_HOST,
+    "style-src": "'self' 'unsafe-inline'", // Allow inline styles
+    "media-src": "'self'"
+  };
 
   return ENV;
 };

@@ -35,5 +35,14 @@ module Api
     config.generators do |g|
       g.assets false
     end
+    config.middleware.insert_before "Rack::Sendfile", "Rack::Cors" do
+      allow do
+        origins Rails.application.secrets.front_end_host
+
+        resource "/*",
+          headers: :any,
+          methods: [:get, :post, :options, :put, :delete]
+      end
+    end
   end
 end
