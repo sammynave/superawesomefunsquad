@@ -1,7 +1,11 @@
 /* jshint node: true */
+
+require("dotenv").load();
+
 module.exports = function(environment) {
-  var ENV = {
+  const ENV = {
     modulePrefix: 'front-end',
+    podModulePrefix: 'front-end/pods',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -15,9 +19,32 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    torii: {
+      providers: {
+        'google-oauth2': {
+          apiKey: process.env.GOOGLE_API_KEY,
+          redirectUri: 'http://localhost:4200/posts',
+          scope: 'email profile'
+        },
+        'facebook-oauth2': {
+          apiKey: process.env.FB_API_KEY,
+          redirectUri: 'http://localhost:4200/posts',
+          scope: 'email'
+        }
+      }
+    },
+
+    'ember-simple-auth': {
+      routeAfterAuthentication: 'posts',
+      routeIfAlreadyAuthenticated: 'posts',
+      authenticationRoute: 'login'
     }
   };
 
+
+  ENV.APP.API_HOST = process.env.API_HOST;
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
@@ -25,7 +52,6 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.APP.API_HOST = 'http://localhost:3000';
   }
 
   if (environment === 'test') {
@@ -41,12 +67,12 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
   }
 
   ENV.contentSecurityPolicy = {
     "default-src": "'none'",
-    "script-src": "'self'",
+    "frame-src": "accounts.google.com",
+    "script-src": "'self' apis.google.com",
     "font-src": "'self'",
     "connect-src": "'self' " + ENV.APP.API_HOST,
     "img-src": "'self' " + ENV.APP.API_HOST,
