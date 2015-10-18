@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151012024615) do
+ActiveRecord::Schema.define(version: 20151018060608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "logins", force: :cascade do |t|
+    t.string   "identification",          null: false
+    t.string   "password_digest"
+    t.string   "oauth2_token",            null: false
+    t.string   "uid"
+    t.string   "single_use_oauth2_token"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "provider"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -23,4 +35,14 @@ ActiveRecord::Schema.define(version: 20151012024615) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "username"
+    t.integer  "login_id"
+  end
+
+  add_index "users", ["login_id"], name: "index_users_on_login_id", using: :btree
+
+  add_foreign_key "users", "logins"
 end
