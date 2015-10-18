@@ -9,6 +9,13 @@ Router.map(function() {
   this.route('post', {path: 'posts/:post_id'});
   this.route('posts', {});
   this.route('login', {});
+  this.route('users', {}, function() {
+    this.route('new', {});
+  });
+
+  this.route('books', {}, function() {
+    this.route('new', {});
+  });
 });
 
 export default Router;

@@ -25,20 +25,20 @@ module.exports = function(environment) {
       providers: {
         'google-oauth2': {
           apiKey: process.env.GOOGLE_API_KEY,
-          redirectUri: 'http://localhost:4200/posts',
+          redirectUri: 'http://localhost:4200/',
           scope: 'email profile'
         },
         'facebook-oauth2': {
           apiKey: process.env.FB_API_KEY,
-          redirectUri: 'http://localhost:4200/posts',
-          scope: 'email'
+          redirectUri: 'http://localhost:4200/',
+          scope: 'email,public_profile'
         }
       }
     },
 
     'ember-simple-auth': {
-      routeAfterAuthentication: 'posts',
-      routeIfAlreadyAuthenticated: 'posts',
+      routeAfterAuthentication: 'application',
+      routeIfAlreadyAuthenticated: 'application',
       authenticationRoute: 'login'
     }
   };
