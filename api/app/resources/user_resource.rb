@@ -1,3 +1,3 @@
 class UserResource < JSONAPI::Resource
-  attributes :username
+  attributes :username#, :identification, :password
 end

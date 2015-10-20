@@ -21,24 +21,9 @@ module.exports = function(environment) {
       // when it is created
     },
 
-    torii: {
-      providers: {
-        'google-oauth2': {
-          apiKey: process.env.GOOGLE_API_KEY,
-          redirectUri: 'http://localhost:4200/',
-          scope: 'email profile'
-        },
-        'facebook-oauth2': {
-          apiKey: process.env.FB_API_KEY,
-          redirectUri: 'http://localhost:4200/',
-          scope: 'email,public_profile'
-        }
-      }
-    },
-
     'ember-simple-auth': {
-      routeAfterAuthentication: 'application',
-      routeIfAlreadyAuthenticated: 'application',
+      routeAfterAuthentication: 'posts',
+      routeIfAlreadyAuthenticated: 'posts',
       authenticationRoute: 'login'
     }
   };

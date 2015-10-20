@@ -1,4 +1,6 @@
 <form {{action 'submit' on='submit'}}>
-  {{input type="text" value=user.username }}
-  <button type="submit">submit</button>
+  {{input type='text' value=user.username placeholder='username'}}
+  {{input type='email' value=login.identification placeholder='email'}}
+  {{input type='password' value=login.password placeholder='password'}}
+  <button type='submit'>submit</button>
 </form>
