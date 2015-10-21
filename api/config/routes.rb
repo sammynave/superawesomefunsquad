@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  jsonapi_resources :users, only: [:create]
+  jsonapi_resources :signups, only: [:create]
   jsonapi_resources :posts
 
   # The priority is based upon order of creation: first created -> highest priority.
