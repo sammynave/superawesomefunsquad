@@ -1,0 +1,6 @@
+<form {{action 'submit' on='submit'}}>
+  {{input type='text' value=post.title placeholder='title' }}
+  {{textarea value=post.body placeholder='body' }}
+  <button type='submit'>submit</button>
+</form>
+{{yield}}

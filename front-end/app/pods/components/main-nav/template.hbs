@@ -1,6 +1,7 @@
 <ul>
 {{#if session.isAuthenticated}}
   <li>{{link-to 'posts' 'posts'}}</li>
+  <li>{{link-to 'new post' 'posts.new'}}</li>
   <li>{{#logout-button}}logout{{/logout-button}}</li>
 {{else}}
   <li>{{link-to 'login' 'login'}}</li>

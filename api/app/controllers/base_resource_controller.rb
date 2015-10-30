@@ -4,5 +4,4 @@ class BaseResourceController < JSONAPI::ResourceController
   include RailsApiAuth::Authentication
 
   before_action :authenticate!
-
 end
