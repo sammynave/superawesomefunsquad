@@ -1,0 +1,11 @@
+<ul class='row header-row'>
+  <li class='col-xs-3 center-xs'>author</li>
+  <li class='col-xs-9'>subject</li>
+</ul>
+<ul class='row'>
+  {{#each posts as |post|}}
+    <li class='col-xs-12'>
+      {{#post-preview 'post' post title=post.title author=post.user.username}}{{/post-preview}}
+    </li>
+  {{/each}}
+</ul>

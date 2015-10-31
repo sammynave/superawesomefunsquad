@@ -3,11 +3,7 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    sassOptions: {
-      includePaths: [
-        'bower_components/normalize-css'
-      ]
-    }
+    sassOptions: { }
   });
 
   // Use `app.import` to add additional libraries to the generated
@@ -24,6 +20,8 @@ module.exports = function(defaults) {
   // along with the exports of each module as its value.
 
   app.import('bower_components/fastclick/lib/fastclick.js');
+  app.import('bower_components/normalize-css/normalize.css');
+  app.import('bower_components/flexboxgrid/css/flexboxgrid.css');
 
   return app.toTree();
 };

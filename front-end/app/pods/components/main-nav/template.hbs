@@ -1,10 +1,12 @@
-<ul>
-{{#if session.isAuthenticated}}
-  <li>{{link-to 'posts' 'posts'}}</li>
-  <li>{{link-to 'new post' 'posts.new'}}</li>
-  <li>{{#logout-button}}logout{{/logout-button}}</li>
-{{else}}
-  <li>{{link-to 'login' 'login'}}</li>
-  <li>{{link-to 'signup' 'signup'}}</li>
-{{/if}}
-</ul>
+<div class='col-xs'>
+  <ul class='row center-xs'>
+  {{#if session.isAuthenticated}}
+    <li class='col-xs'>{{link-to 'posts' 'posts'}}</li>
+    <li class='col-xs'>{{link-to 'new post' 'posts.new'}}</li>
+    <li class='col-xs'>{{#logout-button}}logout{{/logout-button}}</li>
+  {{else}}
+    <li class='col-xs'>{{link-to 'login' 'login'}}</li>
+    <li class='col-xs'>{{link-to 'signup' 'signup'}}</li>
+  {{/if}}
+  </ul>
+</div>

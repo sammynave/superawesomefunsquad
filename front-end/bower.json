@@ -14,7 +14,8 @@
     "qunit": "~1.18.0",
     "normalize-css": "normalize.css#~3.0.3",
     "fastclick": "~1.0.6",
-    "ember-simple-auth": "0.8.0"
+    "ember-simple-auth": "0.8.0",
+    "flexboxgrid": "~6.3.0"
   },
   "resolutions": {
     "ember": "2.1.0"

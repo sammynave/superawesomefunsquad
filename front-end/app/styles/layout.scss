@@ -1,0 +1,39 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+  color: $font-main;
+  background-color: $c2;
+}
+
+ul {
+  margin: 0;
+  padding: 0
+}
+
+li {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+a {
+  color: $font-main;
+  text-decoration: none;
+  &:link, &:visited, &:hover, &:active {
+    color: $font-main;
+    text-decoration: none;
+  }
+}
+
+.container-fluid {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
