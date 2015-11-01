@@ -10,7 +10,7 @@ html {
 
 *:focus {
   outline-width: 0;
-  background-color: rgba(0,0,0,.1);
+  //background-color: rgba(0,0,0,.1);
 }
 
 html, body {
@@ -46,12 +46,15 @@ a {
 
 input[type='text'],
 input[type='email'],
-input[type='password'] {
-  padding: .5rem;
-  border-radius: $border-radius;
+input[type='password'],
+textarea {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
   border-width: 0;
+  background-color: $c2;
+  border-bottom: .1rem $c1 solid;
   &:focus {
-    background-color: rgba(255,255,255,.8);
+    border-bottom-width: .15rem;
   }
 }
 
@@ -59,8 +62,6 @@ button {
   padding: .5rem;
   border-radius: $border-radius;
   border-width: 0;
-  background-color: #fff;
-  box-shadow: .1rem .1rem #ccc;
   &:focus {
     outline-width: 0;
   }
@@ -78,9 +79,14 @@ button {
 .btn-primary {
   color: $font-secondary;
   background-color: $c3;
-  box-shadow: .1rem .1rem $c5;
+  box-shadow: 0 0.1rem 0 .05rem $c5;
+  text-shadow: 0.1rem 0.1rem $c5;
+  &:hover {
+    text-shadow: 0.1rem 0.1rem $c5;
+  }
   &:active {
     background-color: $c4;
-    box-shadow: .05rem .05rem $c5;
+    box-shadow: 0 0.05rem 0 .05rem $c5;
+    text-shadow: -.05rem .05rem $c5;
   }
 }

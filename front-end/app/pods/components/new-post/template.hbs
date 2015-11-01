@@ -1,6 +1,6 @@
-<form {{action 'submit' on='submit'}}>
-  {{input type='text' value=post.title placeholder='title' }}
-  {{textarea value=post.body placeholder='body' }}
-  <button type='submit'>submit</button>
+<form {{action 'submit' on='submit'}} class='row'>
+  {{input class='col-xs-12' type='text' value=post.title placeholder='title' autofocus=true required=true}}
+  {{textarea class='col-xs-12' value=post.body placeholder='body' required=true autoresize=true rows=1 max-height='30vh' }}
+  <button class='col-xs-5 col-xs-offset-7 btn-primary' type='submit'>post</button>
 </form>
 {{yield}}

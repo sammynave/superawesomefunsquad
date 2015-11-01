@@ -1,12 +1,12 @@
 <div class='col-xs'>
   <ul class='row center-xs'>
   {{#if session.isAuthenticated}}
-    <li class='col-xs'>{{link-to 'posts' 'posts'}}</li>
-    <li class='col-xs'>{{link-to 'new post' 'posts.new'}}</li>
-    <li class='col-xs'>{{#logout-button}}logout{{/logout-button}}</li>
+    <li class='col-xs-4'>{{link-to 'posts' 'posts.index'}}</li>
+    <li class='col-xs-4'>{{link-to 'new post' 'posts.new'}}</li>
+    <li class='col-xs-4'>{{link-to 'log out' 'logout'}}</li>
   {{else}}
-    <li class='col-xs'>{{link-to 'login' 'login'}}</li>
-    <li class='col-xs'>{{link-to 'signup' 'signup'}}</li>
+    <li class='col-xs-6'>{{link-to 'create account' 'signup'}}</li>
+    <li class='col-xs-6'>{{link-to 'log in' 'login'}}</li>
   {{/if}}
   </ul>
 </div>
