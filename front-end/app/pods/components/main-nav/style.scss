@@ -16,4 +16,14 @@ a {
     text-shadow: -.05rem .05rem $c5;
     box-shadow: inset 0 0 .15rem $c5;
   }
+  &:focus {
+    background-color: $c4;
+  }
+  &.active {
+    background-color: $c4;
+    box-shadow: inset 0 0 .08rem $c5;
+    &:focus {
+      background-color: $c5;
+    }
+  }
 }

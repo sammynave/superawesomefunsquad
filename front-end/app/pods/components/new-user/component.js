@@ -5,8 +5,9 @@ const { service } = Ember.inject;
 export default Ember.Component.extend({
   session: service('session'),
   store: service('store'),
+  classNames: ['container-fluid'],
   actions: {
-    submit(){
+    submit() {
       const signup = this.get('signup');
       const { identification, password } = signup.getProperties('identification', 'password');
       signup.save().then(() => {

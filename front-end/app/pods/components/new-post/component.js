@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   actions: {
-    submit(){
+    submit() {
       this.sendAction('action', this.get('post'));
     }
   }

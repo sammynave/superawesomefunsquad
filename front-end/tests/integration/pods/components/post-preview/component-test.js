@@ -17,10 +17,10 @@ test('it renders', function(assert) {
 
   // Template block usage:
   this.render(hbs`
-    {{#post-preview}}
+    {{#post-preview 'posts'}}
       template block text
     {{/post-preview}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$().text().trim(), '');
 });

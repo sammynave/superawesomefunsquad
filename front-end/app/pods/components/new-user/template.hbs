@@ -1,6 +1,7 @@
-<form {{action 'submit' on='submit'}}>
-  {{input type='text' value=signup.username placeholder='username'}}
-  {{input type='email' value=signup.identification placeholder='email'}}
-  {{input type='password' value=signup.password placeholder='password'}}
-  <button type='submit'>submit</button>
+<h3 class='row'>Create an account</h3>
+<form {{action 'submit' on='submit'}} class='row'>
+  {{input class='col-xs-12' type='text' value=signup.username placeholder='username'}}
+  {{input class='col-xs-12' type='email' value=signup.identification placeholder='email'}}
+  {{input class='col-xs-12' type='password' value=signup.password placeholder='password'}}
+  <button class='col-xs-12 btn-primary' type='submit'>submit</button>
 </form>
