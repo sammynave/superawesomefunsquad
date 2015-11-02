@@ -16,7 +16,9 @@
     "fastclick": "~1.0.6",
     "ember-simple-auth": "0.8.0",
     "flexboxgrid": "~6.3.0",
-    "quill": "~0.20.0"
+    "quill": "~0.20.0",
+    "moment": ">= 2.8.0",
+    "moment-timezone": ">= 0.1.0"
   },
   "resolutions": {
     "ember": "2.1.0"
