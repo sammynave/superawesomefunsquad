@@ -16,7 +16,7 @@
     "fastclick": "~1.0.6",
     "ember-simple-auth": "0.8.0",
     "flexboxgrid": "~6.3.0",
-    "dom-ruler": "0.1.13"
+    "quill": "~0.20.0"
   },
   "resolutions": {
     "ember": "2.1.0"

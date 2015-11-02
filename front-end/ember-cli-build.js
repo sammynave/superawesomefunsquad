@@ -25,6 +25,9 @@ module.exports = function(defaults) {
   app.import('bower_components/fastclick/lib/fastclick.js');
   app.import('bower_components/normalize-css/normalize.css');
   app.import('bower_components/flexboxgrid/css/flexboxgrid.css');
+  app.import('bower_components/quill/dist/quill.base.css');
+  app.import('bower_components/quill/dist/quill.snow.css');
+  app.import('bower_components/quill/dist/quill.js');
 
   return app.toTree();
 };

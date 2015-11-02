@@ -6,7 +6,7 @@ class PostsController < BaseResourceController
   def create
     new_post = post_params.merge(user_id: current_login.user_id)
     post = Post.create(new_post)
-
+    # call Post.find(:id).touch when creating comments
     post.save
     render json: serializer.serialize_to_hash(PostResource.new(post, nil))
   end

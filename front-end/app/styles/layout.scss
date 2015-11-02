@@ -23,9 +23,6 @@ ul {
   padding: 0
 }
 
-li {
-  list-style: none;
-}
 
 h1, h2, h3, h4, h5 {
   margin: 0;
@@ -44,6 +41,7 @@ a {
   background-color: $c1;
 }
 
+
 input[type='text'],
 input[type='email'],
 input[type='password'],
@@ -52,9 +50,12 @@ textarea {
   padding-bottom: .5rem;
   border-width: 0;
   background-color: $c2;
-  border-bottom: .1rem $c1 solid;
+  border-bottom: .1rem #ccc solid;
   &:focus {
-    border-bottom-width: .15rem;
+    border-bottom-color: $c1;
+  }
+  &::placeholder {
+    color: #ccc;
   }
 }
 

@@ -4,3 +4,16 @@
   padding-bottom: .5rem;
   color: $font-main-light;
 }
+
+li {
+  list-style: none;
+}
+
+.sort {
+  cursor: pointer;
+}
+
+.not-active {
+  text-decoration: underline;
+  color: $c1;
+}
