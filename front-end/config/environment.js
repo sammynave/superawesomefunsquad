@@ -57,10 +57,10 @@ module.exports = function(environment) {
   ENV.contentSecurityPolicy = {
     "default-src": "'none'",
     "frame-src": "accounts.google.com",
-    "script-src": "'self' apis.google.com",
+    "script-src": "'self' 'unsafe-inline' apis.google.com",
     "font-src": "'self'",
     "connect-src": "'self' " + ENV.APP.API_HOST,
-    "img-src": "'self' " + ENV.APP.API_HOST,
+    "img-src": "'self' data: " + ENV.APP.API_HOST,
     "style-src": "'self' 'unsafe-inline'", // Allow inline styles
     "media-src": "'self'"
   };

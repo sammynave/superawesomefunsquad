@@ -3,7 +3,8 @@
     "document",
     "window",
     "-Promise",
-    "FastClick"
+    "FastClick",
+    "Quill"
   ],
   "browser": true,
   "boss": true,

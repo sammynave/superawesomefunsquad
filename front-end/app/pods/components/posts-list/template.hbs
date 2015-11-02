@@ -1,11 +1,16 @@
 <ul class='row header-row'>
   <li class='col-xs-3 center-xs'>author</li>
-  <li class='col-xs-9'>subject</li>
+  <li class='col-xs-6'>subject</li>
+  <li class='col-xs-3'>activity (
+    <span class="sort {{if isDesc 'not-active'}}" {{action "asc"}}>asc</span> | 
+    <span class="sort {{if isAsc 'not-active'}}" {{action "desc"}}>desc</span>)
+</li>
 </ul>
 <ul class='row'>
-  {{#each posts as |post|}}
+  {{#each sortedPosts as |post|}}
     <li class='col-xs-12'>
-      {{#post-preview 'post' post title=post.title author=post.user.username}}{{/post-preview}}
+      {{#post-preview 'post' post title=post.title author=post.user.username
+      updatedAt=post.updatedAt}}{{/post-preview}}
     </li>
   {{/each}}
 </ul>
