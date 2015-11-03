@@ -1,8 +1,38 @@
+require("dotenv").load();
+
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
+  var env = EmberApp.env() || 'development';
+  var isProductionLikeBuild = ['production'].indexOf(env) > -1;
+
+  var fingerprintOptions = {
+    enabled: true,
+    extensions: ['js', 'css', 'png', 'jpg', 'gif']
+  };
+
+  switch (env) {
+    case 'development':
+      fingerprintOptions.prepend = 'http://localhost:4200/';
+    break;
+    case 'production':
+      fingerprintOptions.prepend = process.env.S3_BUCKET;
+    break;
+  }
+
   var app = new EmberApp(defaults, {
+    fingerprint: fingerprintOptions,
+    emberCLIDeploy: {
+      shouldActivate: true
+    },
+    sourcemaps: {
+      enabled: !isProductionLikeBuild
+    },
+    minifyCSS: { enabled: isProductionLikeBuild },
+    minifyJS: { enabled: isProductionLikeBuild },
+    tests: process.env.EMBER_CLI_TEST_COMMAND || !isProductionLikeBuild,
+    hinting: process.env.EMBER_CLI_TEST_COMMAND || !isProductionLikeBuild,
     sassOptions: { },
     autoprefixer: {
       browsers: [ 'last 3 version','> 2%']
@@ -30,4 +60,4 @@ module.exports = function(defaults) {
   app.import('bower_components/quill/dist/quill.js');
 
   return app.toTree();
-};
+}
