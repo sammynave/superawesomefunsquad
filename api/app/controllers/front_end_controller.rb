@@ -1,10 +1,10 @@
-class DeployController < ApplicationController
+class FrontEndController < ApplicationController
   SHORT_UUID_V4_REGEXP = /\A[0-9a-f]{7}\z/i
   def index
     index_key = if Rails.env.development?
-                  'edd-cli:__development__'
+                  'front-end:__development__'
                 elsif fetch_revision
-                  "edd-cli:index:#{fetch_revision}"
+                  "front-end:index:#{fetch_revision}"
                 else
                   Sidekiq.redis { |r| "front-end:index:#{r.get('front-end:index:current')}" }
                 end
