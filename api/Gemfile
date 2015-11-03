@@ -8,6 +8,7 @@ gem 'jsonapi-resources'
 gem 'rack-cors', require: 'rack/cors'
 gem 'rails_api_auth', github: 'simplabs/rails_api_auth', branch: 'master'
 gem 'pry'
+gem 'unicorn'
 
 group :development do
   gem 'web-console', '~> 2.0'

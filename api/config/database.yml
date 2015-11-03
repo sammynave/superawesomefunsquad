@@ -20,6 +20,7 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
+  host: localhost
 
 
 development:
@@ -73,5 +74,5 @@ test:
 production:
   <<: *default
   database: api_production
-  username: api
-  password: <%= ENV['API_DATABASE_PASSWORD'] %>
+  username: rails
+  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
