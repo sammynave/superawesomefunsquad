@@ -24,6 +24,7 @@ module.exports = function(deployTarget) {
       host: 'localhost',
       port: process.env['REDIS_PORT']
     };
+
     ENV.s3 = {
       accessKeyId: process.env['AWS_ACCESS_KEY'],
       secretAccessKey: process.env['AWS_SECRET_KEY'],
