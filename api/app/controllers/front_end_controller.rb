@@ -4,12 +4,12 @@ class FrontEndController < ApplicationController
     index_key = if Rails.env.development?
                   'front-end:__development__'
                 elsif fetch_revision
-                  "front-end:index:#{fetch_revision}"
+                  "front-end:#{fetch_revision}"
                 else
-                  Sidekiq.redis { |r| "front-end:index:#{r.get('front-end:index:current')}" }
+                  Sidekiq.redis { |r| "front-end:#{r.get('front-end:current')}" }
                 end
     index = Sidekiq.redis { |r| r.get(index_key) }
-    render text: add_token_to_index(index), layout: false
+    render text: add_token_to_index(index), layout: false, content_type: "text/html"
   end
 
   private

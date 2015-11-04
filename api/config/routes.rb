@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   jsonapi_resources :signups, only: [:create]
   jsonapi_resources :posts
 
-  get '/(*path)' => 'front-end#index', as: :root, format: :html
+  get '/(*path)' => 'front_end#index', as: :root, format: :html
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
