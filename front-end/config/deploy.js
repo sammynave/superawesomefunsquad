@@ -1,7 +1,7 @@
 require("dotenv").load();
 
 module.exports = function(deployTarget) {
-  var ENV = {}
+  var ENV = {};
 
   if (deployTarget === 'production') {
     ENV.build = {
@@ -13,10 +13,13 @@ module.exports = function(deployTarget) {
       username: process.env['SSH_USERNAME'],
       privateKeyPath: process.env['SSH_KEY_PATH'],
       host: process.env['REDIS_HOST'],
-      srcPort: 50000
+      srcPort: process.env['REDIS_PORT'],
+      dstHost: 'localhost',
+      dstPort: process.env['REDIS_PORT']
     };
 
     ENV.redis = {
+      keyPrefix: 'front-end',
       allowOverwrite: true,
       host: 'localhost',
       port: process.env['REDIS_PORT']
