@@ -2,4 +2,9 @@
 <h5>{{post.user.username}}</h5>
 <p>{{{post.body}}}</p>
 
+{{#each post.comments as |comment|}}
+  <span>{{comment.user.username}}</span>
+  <p>{{comment.body}}</p>
+{{/each}}
+
 {{outlet}}

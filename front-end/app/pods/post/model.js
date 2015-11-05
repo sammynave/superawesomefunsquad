@@ -4,5 +4,6 @@ export default DS.Model.extend({
   title: DS.attr('string'),
   body: DS.attr('string'),
   updatedAt: DS.attr('date'),
-  user: DS.belongsTo('user')
+  user: DS.belongsTo('user'),
+  comments: DS.hasMany('comment')
 });
