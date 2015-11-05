@@ -3,15 +3,14 @@ require("dotenv").load();
 module.exports = function(deployTarget) {
   var ENV = {
     build: {},
-    redis: {
-      keyPrefix: 'front-end',
-      allowOverwrite: true
-    }
+    redis: {}
   };
 
   if (deployTarget === 'development-postbuild') {
     ENV.redis = {
-      revisionKey: '__development__'
+      revisionKey: '__development__',
+      keyPrefix: 'front-end',
+      allowOverwrite: true
     };
     ENV.build = {
       environment: 'development'
@@ -36,7 +35,9 @@ module.exports = function(deployTarget) {
 
     ENV.redis = {
       host: 'localhost',
-      port: process.env['REDIS_PORT']
+      port: process.env['REDIS_PORT'],
+      keyPrefix: 'front-end',
+      allowOverwrite: true
     };
 
     ENV.s3 = {
