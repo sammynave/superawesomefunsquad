@@ -1,7 +1,23 @@
 require("dotenv").load();
 
 module.exports = function(deployTarget) {
-  var ENV = {};
+  var ENV = {
+    build: {},
+    redis: {
+      keyPrefix: 'front-end',
+      allowOverwrite: true
+    }
+  };
+
+  if (deployTarget === 'development-postbuild') {
+    ENV.redis = {
+      revisionKey: '__development__'
+    };
+    ENV.build = {
+      environment: 'development'
+    };
+    ENV.plugins = ['build', 'redis'];
+  }
 
   if (deployTarget === 'production') {
     ENV.build = {
@@ -19,8 +35,6 @@ module.exports = function(deployTarget) {
     };
 
     ENV.redis = {
-      keyPrefix: 'front-end',
-      allowOverwrite: true,
       host: 'localhost',
       port: process.env['REDIS_PORT']
     };
@@ -36,5 +50,4 @@ module.exports = function(deployTarget) {
   // a promise that resolves with the ENV object instead of returning the
   // ENV object synchronously.
   return ENV;
-
 };

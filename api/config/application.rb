@@ -43,6 +43,14 @@ module Api
           headers: :any,
           methods: [:get, :post, :options, :put, :delete]
       end
+
+      allow do
+        origins Rails.application.secrets.front_end_host
+
+        resource "/*",
+          headers: :any,
+          methods: [:get, :post, :options, :put, :delete]
+      end
     end
   end
 end
