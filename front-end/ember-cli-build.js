@@ -17,7 +17,7 @@ module.exports = function(defaults) {
       fingerprintOptions.prepend = 'http://localhost:4200/';
     break;
     case 'production':
-      fingerprintOptions.prepend = process.env.S3_BUCKET;
+      fingerprintOptions.prepend = process.env.AWS_S3_BUCKET;
     break;
   }
 

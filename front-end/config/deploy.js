@@ -25,24 +25,24 @@ module.exports = function(deployTarget) {
     // configure other plugins for production deploy target here
 
     ENV['ssh-tunnel'] = {
-      username: process.env['SSH_USERNAME'],
-      privateKeyPath: process.env['SSH_KEY_PATH'],
-      host: process.env['REDIS_HOST'],
-      srcPort: process.env['REDIS_PORT'],
+      username: process.env.SSH_USERNAME,
+      privateKeyPath: process.env.SSH_KEY_PATH,
+      host: process.env.SSH_HOST,
+      srcPort: process.env.SSH_PORT,
       dstHost: 'localhost',
-      dstPort: process.env['REDIS_PORT']
+      dstPort: process.env.REDIS_PORT
     };
 
     ENV.redis = {
       host: 'localhost',
-      port: process.env['REDIS_PORT'],
+      port: process.env.REDIS_PORT
       keyPrefix: 'front-end',
       allowOverwrite: true
     };
 
     ENV.s3 = {
-      accessKeyId: process.env['AWS_ACCESS_KEY'],
-      secretAccessKey: process.env['AWS_SECRET_KEY'],
+      accessKeyId: process.env.AWS_ACCESS_KEY,
+      secretAccessKey: process.env.AWS_SECRET_KEY,
       bucket: 'safs'
     }
   }
