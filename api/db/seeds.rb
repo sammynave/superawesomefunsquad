@@ -6,4 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-posts = Post.create([{title: 'hang times?', body: 'come over to my place friday.'}, {title: 'tennis', body: 'at tennish near harvest'}])
+users = User.create([{username: 'test1'},{username: 'test2'}]);
+posts = Post.create([{title: 'hang times?', body: 'come over to my place friday.', user: users.first}, {title: 'tennis', body: 'at tennish near harvest', user: users.last}])
+comments = Comment.create([{body: 'comments hereeee check me out', post_id: posts.first.id, user_id: users.last.id}, {body: 'i can play tennishsist', post_id: posts.last.id, user_id: users.first.id}])

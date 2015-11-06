@@ -1,3 +1,19 @@
-<span class='username col-xs-3 center-xs middle-xs'>{{author}}</span>
-<h4 class='post-title col-xs-6 middle-xs'>{{title}}</h4>
-<span class='activity col-xs-3 center-xs middle-xs'>{{moment-from-now updatedAt}}</span>
+<a class='row header' {{action 'toggleOpen'}}>
+  <span class='col-xs-1 center-xs'>{{if isOpen '+' '-'}}</span>
+  <span class='username col-xs-3 center-xs middle-xs'>{{author}}</span>
+  <h4 class='post-title col-xs-6 middle-xs'>{{title}}</h4>
+  <span class='activity col-xs-2 center-xs middle-xs'>{{moment-from-now updatedAt}}</span>
+</a>
+{{#if isOpen}}
+  <div class='row body'>
+    <div class='col-xs-12'>{{{body}}}</div>
+  </div>
+  <div class='comments row'>
+    <h5 class='count'>{{comments.count}} comments</h5>
+    {{#each comments as |comment|}}
+      <span>{{comment.user.username}}</span>
+      <p>{{comment.body}}</p>
+    {{/each}}
+  </div>
+{{/if}}
+
