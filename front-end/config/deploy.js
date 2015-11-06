@@ -35,7 +35,7 @@ module.exports = function(deployTarget) {
 
     ENV.redis = {
       host: 'localhost',
-      port: process.env.REDIS_PORT,
+      port: process.env.SSH_PORT,
       keyPrefix: 'front-end',
       allowOverwrite: true
     };
