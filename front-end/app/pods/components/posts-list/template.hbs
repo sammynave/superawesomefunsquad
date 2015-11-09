@@ -2,12 +2,12 @@
   <li class='col-xs-12 end-xs'>activity
     <span class="sort {{if isDesc 'not-active'}}" {{action "asc"}}>asc</span> | 
     <span class="sort {{if isAsc 'not-active'}}" {{action "desc"}}>desc</span>
-</li>
+  </li>
 </ul>
 <ul class='row'>
   {{#each sortedPosts as |post|}}
     <li class='col-xs-12'>
-      {{#post-preview
+      {{#post-preview 'post' post
         title=post.title
         author=post.user.username
         updatedAt=post.updatedAt

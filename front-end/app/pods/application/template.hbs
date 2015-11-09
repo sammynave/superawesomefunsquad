@@ -1,4 +1,9 @@
 <div class='container-fluid'>
   {{main-nav}}
   {{outlet}}
+  {{#if session.isAuthenticated}}
+    <div class='col-xs'>
+      logged in as {{session.currentUser.username}}
+    </div>
+  {{/if}}
 </div>

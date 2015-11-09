@@ -1,32 +1,22 @@
 & {
+  border-bottom: .1rem solid $c1;
+  &:hover {
+    background-color: fade-out($c1, .9)
+  }
+  cursor: pointer;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  border-bottom: .1rem solid $c1;
-  &.closed:hover {
-    .header {
-      background-color: $c1;
-      color: $c2;
-    }
-  }
-  &.open {
-    .header {
-      background-color: $c1;
-      color: $c2;
-    }
-  }
-}
-
-.header {
-  cursor: pointer;
 }
 
 .username {
+  font-size: .7rem;
 }
 
 .post-title {
 }
 
 .activity {
+  font-size: .5rem;
 }
 
 .body {
@@ -35,9 +25,5 @@
 }
 
 .comments {
-  background-color: $gray;
-}
-
-.count {
-  font-size: .6rem;
+  font-size: .5rem;
 }

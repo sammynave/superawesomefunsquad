@@ -13,6 +13,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   },
   actions: {
     createPost(post) {
+      post.set('user', this.get('session.currentUser'));
       post.save().then(() => {
         this.transitionTo('post', post);
       }.bind(this)).catch((reason) => {

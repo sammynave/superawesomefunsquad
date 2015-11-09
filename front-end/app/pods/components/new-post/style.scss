@@ -12,7 +12,8 @@ input {
 
 textarea {
   margin-bottom: .5rem;
-  //resize: none;
+  resize: none;
+  height: 20vh;
 }
 
 button {
