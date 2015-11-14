@@ -1,0 +1,23 @@
+.alert {
+  @extend .col-xs-12;
+  padding: 1rem;
+}
+
+.alert-success {
+
+}
+
+.alert-warning {
+  color: $c5;
+  &:before {
+   content: '☠'
+  }
+}
+
+.alert-info {
+
+}
+
+.alert-secondary {
+
+}

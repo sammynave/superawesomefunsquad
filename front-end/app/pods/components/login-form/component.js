@@ -7,9 +7,10 @@ export default Ember.Component.extend({
   classNames: ['container-fluid'],
   actions: {
     authenticate() {
+      const flashMessages = Ember.get(this, 'flashMessages');
       let { identification, password } = this.getProperties('identification', 'password');
       this.get('session').authenticate('authenticator:front-end', identification, password).catch((reason) => {
-        this.set('errorMessage', reason.error);
+        flashMessages.warning('invalid email address or password');
       });
     }
   }

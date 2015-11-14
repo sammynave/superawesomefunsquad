@@ -1,3 +1,5 @@
+/*jshint node:true*/
+
 require("dotenv").load();
 
 /* global require, module */
@@ -57,4 +59,4 @@ module.exports = function(defaults) {
   app.import('bower_components/flexboxgrid/css/flexboxgrid.css');
 
   return app.toTree();
-}
+};

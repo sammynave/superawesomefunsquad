@@ -7,11 +7,20 @@ export default Ember.Route.extend(UnauthenticatedRouteMixin, {
   },
   actions: {
     createSignup(signup){
+      const flashMessages = Ember.get(this, 'flashMessages');
       const { identification, password } = signup.getProperties('identification', 'password');
       signup.save().then(() => {
         this.get('store').unloadAll('signup');
         this.get('session').authenticate('authenticator:front-end', identification, password).catch((reason) => {
-          this.set('errorMessage', reason.error);
+          flashMessages.warning('something bad happened. user could not be authenticated.');
+        });
+      }).catch((reason) => {
+        const errors = reason.errors;
+        errors.forEach((error) => {
+          let keys = Object.keys(error);
+          keys.forEach((key) => {
+            flashMessages.warning(`${key} ${error[key]}`);
+          });
         });
       });
     }
