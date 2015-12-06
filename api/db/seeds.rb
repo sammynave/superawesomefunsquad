@@ -17,8 +17,8 @@ if Rails.env.development?
     {username: 'test2', email: 'test2@frank.com'}
   ]);
   posts = Post.create([
-    {title: 'hang times?', body: 'come over to my place friday.', user: users.first},
-    {title: 'tennis', body: 'at tennish near harvest', user: users.last}
+    {body: 'come over to my place friday.', user: users.first},
+    {body: 'at tennish near harvest', user: users.last}
   ])
   comments = Comment.create([
     {body: 'comments hereeee check me out', post_id: posts.first.id, user_id: users.last.id},

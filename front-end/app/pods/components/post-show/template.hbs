@@ -1,0 +1,37 @@
+<div class='col-xs-12'>
+  {{#if isCurrentUsersPost}}
+    <div class='row post-delete middle-xs'>
+      <span class='post-delete' {{action 'deletePost'}}>delete this post</span>
+    </div>
+  {{/if}}
+  <div class='row post-header middle-xs'>
+    <span class='col-xs center-xs img-holder'>
+      <span class='img-placeholder'></span>
+    </span>
+    <span class='username col-xs start-xs'>{{author}}</span>
+    <span class='activity col-xs end-xs'>{{moment-from-now updatedAt}}</span>
+  </div>
+  <div class='row post-body'>
+    <div class='col-xs-12'>
+      {{body}}
+    </div>
+  </div>
+  <div class='row end-xs post-footer'>
+    <span class='comment-count col-xs' {{action 'toggleComments'}}>
+      {{#if commentsVisible}}
+        hide
+      {{else}}
+        {{pluralize-word comments.length 'comment'}}
+      {{/if}}
+    </span>
+  </div>
+  {{#if commentsVisible}}
+    {{new-comment post=post}}
+    <div class='row comments'>
+      {{#each comments as |comment|}}
+        <span class='col-xs-4'>{{comment.user.username}}</span>
+        <span class='col-xs-8'>{{comment.body}}</span>
+      {{/each}}
+    </div>
+  {{/if}}
+</div>

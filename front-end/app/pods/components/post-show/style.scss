@@ -1,0 +1,43 @@
+& {
+  border-bottom: .1rem solid $c1;
+  &:hover {
+    background-color: fade-out($c1, .9)
+  }
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.post-body {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.img-holder {
+  max-width: 4rem;
+}
+
+.img-placeholder {
+  display: inline-flex;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: .2rem solid $c1;
+}
+
+.username {
+  font-size: .7rem;
+}
+
+.activity {
+  font-size: .5rem;
+}
+
+.body {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.comment-count {
+  font-size: .5rem;
+  cursor: pointer;
+}

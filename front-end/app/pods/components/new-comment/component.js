@@ -17,11 +17,9 @@ export default Ember.Component.extend({
       const comment = this.get('store').createRecord('comment', attrs);
 
       comment.save().then((res) => {
-        console.log('comment saved');
-        console.log(res);
+        this.set('body', '');
       }).catch((res) => {
         comment.rollbackAttributes();
-        console.log('comment rejected');
         res.errors.forEach((error) => {
           console.log(error.status);
           console.log(error.title);

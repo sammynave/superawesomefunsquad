@@ -1,19 +1,13 @@
-<ul class='row header-row'>
-  <li class='col-xs-12 end-xs'>activity
-    <span class="sort {{if isDesc 'not-active'}}" {{action "asc"}}>asc</span> | 
-    <span class="sort {{if isAsc 'not-active'}}" {{action "desc"}}>desc</span>
-  </li>
-</ul>
 <ul class='row'>
   {{#each sortedPosts as |post|}}
     <li class='col-xs-12'>
-      {{#post-preview 'post' post
-        title=post.title
+      {{post-show
+        post=post
         author=post.user.username
         updatedAt=post.updatedAt
         body=post.body
         comments=post.comments
-      }}{{/post-preview}}
+      }}
     </li>
   {{/each}}
 </ul>

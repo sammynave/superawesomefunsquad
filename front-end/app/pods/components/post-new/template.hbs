@@ -1,0 +1,5 @@
+<form {{action 'submit' on='submit'}} class='row'>
+  {{textarea class='col-xs-12' value=post.body placeholder='type here' autofocus=true required=true}}
+  <button class='submitPost col-xs-5 col-xs-offset-7 btn-primary' type='submit'>post</button>
+</form>
+{{yield}}
