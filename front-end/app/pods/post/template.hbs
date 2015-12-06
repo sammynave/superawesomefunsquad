@@ -1,15 +1,8 @@
-<div class='row body'>
-  <h5 class='col-xs-3' >{{post.user.username}}</h5>
-  <h3 class='col-xs-9'>{{post.title}}</h3>
-</div>
-<div class='row body'>
-  <div class='col-xs-12'>{{post.body}}</div>
-</div>
-{{new-comment post=post}}
-<div class='comments row'>
-  <h5 class='count col-xs-12'>{{pluralize-word post.comments.length 'comment'}}</h5>
-  {{#each post.comments as |comment|}}
-  <span class='col-xs-4'>{{comment.user.username}}</span>
-  <p class='col-xs-8'>{{comment.body}}</p>
-  {{/each}}
-</div>
+{{post-show
+  post=post
+  author=post.user.username
+  updatedAt=post.updatedAt
+  body=post.body
+  comments=post.comments
+  commentsVisible=true
+}}

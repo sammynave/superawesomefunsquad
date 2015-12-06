@@ -2,4 +2,10 @@
 @import 'layout';
 @import 'flash-messages';
 
+.logged-in-as {
+  font-size: .5rem;
+  padding-top: 2rem;
+  text-align: right;
+}
+
 @import 'pod-styles';
