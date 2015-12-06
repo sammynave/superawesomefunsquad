@@ -8,13 +8,15 @@ export default Ember.Component.extend({
   session: service('session'),
   classNames: ['row'],
   commentsVisible: false,
-  isCurrentUsersPost: computed('session', 'post', function(){
-    console.log('this doesnt work because session doesnt resolve its promise in time');
+  isCurrentUsersPost: computed('session.currentUser.id', 'post.user.id', function(){
     return this.get('session.currentUser.id') == this.get('post.user.id');
   }),
   actions: {
     toggleComments() {
       this.toggleProperty('commentsVisible');
+    },
+    deletePost(){
+      console.log('TODO: delete this post');
     }
   }
 });
