@@ -48,7 +48,8 @@
     "ember-pluralize": "0.2.0",
     "ember-simple-auth": "1.0.1",
     "ember-suave": "1.2.2",
-    "torii": "0.6.1"
+    "torii": "0.6.1",
+    "ember-cable": "algonauti/ember-cable"
   },
   "dependencies": {
     "dotenv": "^1.2.0"

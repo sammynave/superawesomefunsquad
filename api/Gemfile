@@ -11,6 +11,7 @@ gem 'pry'
 gem 'unicorn'
 gem 'dotenv-rails'
 gem 'sidekiq'
+gem 'actioncable', github: 'rails/actioncable'
 
 group :development do
   gem 'web-console', '~> 2.0'

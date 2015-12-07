@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   namespace :api do
+    match '/websocket', to: ActionCable.server, via: [:get, :post]
+
     get 'users/me' => 'users#me'
 
     jsonapi_resources :signups, only: [:create]
