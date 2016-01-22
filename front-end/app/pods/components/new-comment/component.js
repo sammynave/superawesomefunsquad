@@ -5,7 +5,6 @@ const { service } = Ember.inject;
 export default Ember.Component.extend({
   store: service('store'),
   session: service('session'),
-  classNames: ['container-fluid'],
   actions: {
     submit() {
       const attrs = {
