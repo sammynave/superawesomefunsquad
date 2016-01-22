@@ -56,7 +56,6 @@ module.exports = function(defaults) {
 
   app.import('bower_components/fastclick/lib/fastclick.js');
   app.import('bower_components/normalize-css/normalize.css');
-  app.import('bower_components/flexboxgrid/css/flexboxgrid.css');
 
   return app.toTree();
 };

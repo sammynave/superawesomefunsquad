@@ -1,5 +1,5 @@
-<form {{action 'authenticate' on='submit'}} class='row'>
-  {{input class='col-xs-12' type='email' value=identification placeholder='email' autofocus=true required=true}}
-  {{input class='col-xs-12' type='password' value=password placeholder='password' required=true}}
-  <button class='col-xs-5 col-xs-offset-7 btn-primary' type='submit'>log in</button>
+<form {{action 'authenticate' on='submit'}}>
+  {{input type='email' value=identification placeholder='email' autofocus=true required=true}}
+  {{input type='password' value=password placeholder='password' required=true}}
+  <button class='btn-primary' type='submit'>log in</button>
 </form>

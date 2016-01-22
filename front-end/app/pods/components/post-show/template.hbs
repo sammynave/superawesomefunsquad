@@ -1,23 +1,23 @@
-<div class='col-xs-12'>
+<div>
   {{#if isCurrentUsersPost}}
-    <div class='row post-delete middle-xs'>
+    <div class='post-delete'>
       <span class='post-delete' {{action 'deletePost'}}>delete this post</span>
     </div>
   {{/if}}
-  <div class='row post-header middle-xs'>
-    <span class='col-xs center-xs img-holder'>
+  <div class='post-header'>
+    <span class='img-holder'>
       <span class='img-placeholder'></span>
     </span>
-    <span class='username col-xs start-xs'>{{author}}</span>
-    <span class='activity col-xs end-xs'>{{moment-from-now updatedAt}}</span>
+    <span class='username'>{{author}}</span>
+    <span class='activity'>{{moment-from-now updatedAt}}</span>
   </div>
-  <div class='row post-body'>
-    <div class='col-xs-12'>
+  <div class='post-body'>
+    <div>
       {{body}}
     </div>
   </div>
-  <div class='row end-xs post-footer'>
-    <span class='comment-count col-xs' {{action 'toggleComments'}}>
+  <div class='post-footer'>
+    <span class='comment-count' {{action 'toggleComments'}}>
       {{#if commentsVisible}}
         hide
       {{else}}
@@ -27,10 +27,10 @@
   </div>
   {{#if commentsVisible}}
     {{new-comment post=post}}
-    <div class='row comments'>
+    <div class='comments'>
       {{#each comments as |comment|}}
-        <span class='col-xs-4'>{{comment.user.username}}</span>
-        <span class='col-xs-8'>{{comment.body}}</span>
+        <span>{{comment.user.username}}</span>
+        <span>{{comment.body}}</span>
       {{/each}}
     </div>
   {{/if}}

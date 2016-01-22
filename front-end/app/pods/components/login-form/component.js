@@ -4,7 +4,6 @@ const { service } = Ember.inject
 
 export default Ember.Component.extend({
   session: service('session'),
-  classNames: ['container-fluid'],
   actions: {
     authenticate() {
       const flashMessages = Ember.get(this, 'flashMessages');

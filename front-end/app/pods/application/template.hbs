@@ -1,4 +1,4 @@
-<div class='container-fluid'>
+<div>
   {{main-nav}}
 
   {{#each flashMessages.queue as |flash|}}
@@ -8,8 +8,8 @@
   {{outlet}}
 
   {{#if session.isAuthenticated}}
-    <div class='logged-in-as row'>
-      <span class='col-xs-12'>
+    <div class='logged-in-as'>
+      <span>
         hello, {{session.currentUser.username}}.
       </span>
     </div>
