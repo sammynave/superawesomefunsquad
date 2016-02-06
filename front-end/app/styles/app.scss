@@ -1,8 +1,12 @@
+@import 'normalize';
+@import 'zen-grids';
 @import 'colors';
 @import 'layout';
 @import 'flash-messages';
 
 .logged-in-as {
+  @include zen-new-row();
+  @include zen-grid-item(12, 1);
   font-size: .5rem;
   padding-top: 2rem;
   text-align: right;

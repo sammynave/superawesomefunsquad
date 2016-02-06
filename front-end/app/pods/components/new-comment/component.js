@@ -10,7 +10,8 @@ export default Ember.Component.extend({
       const attrs = {
         body: this.get('body'),
         post: this.get('post'),
-        user: this.get('session.currentUser')
+        user: this.get('session.currentUser'),
+        updatedAt: new Date()
       };
 
       const comment = this.get('store').createRecord('comment', attrs);

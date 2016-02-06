@@ -1,0 +1,19 @@
+& {
+  @include zen-grid-container();
+  padding-top: 1rem;
+}
+
+p {
+  @include zen-new-row();
+  @include zen-grid-item(12, 1);
+}
+span {
+  font-size: .6rem;
+}
+.comment-username {
+  @include zen-grid-item(6, 1);
+}
+.comment-time {
+  @include zen-grid-item(6, 7);
+  text-align: right;
+}

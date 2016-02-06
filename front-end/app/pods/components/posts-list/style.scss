@@ -1,19 +1,10 @@
-.header-row {
-  border-bottom: .2rem solid $c1;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-  color: $font-main-light;
-}
-
 li {
   list-style: none;
-}
-
-.sort {
-  cursor: pointer;
-}
-
-.not-active {
-  text-decoration: underline;
-  color: $c1;
+  @include zen-new-row();
+  @include zen-grid-item(12, 1);
+  padding-left: 0;
+  padding-right: 0;
+  &:nth-child(even) {
+    background-color: fade-out($c1, .9)
+  }
 }

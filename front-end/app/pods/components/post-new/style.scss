@@ -1,17 +1,13 @@
 & {
   padding-top: 1rem;
-}
-
-h3 {
-  margin-bottom: .5rem;
+  @include zen-new-row();
+  @include zen-grid-item(12, 1);
 }
 
 textarea {
+  @include zen-new-row();
+  @include zen-grid-item(12, 1);
   margin-bottom: .5rem;
   resize: none;
   height: 20vh;
-}
-
-button {
-  margin-top: .5rem;
 }

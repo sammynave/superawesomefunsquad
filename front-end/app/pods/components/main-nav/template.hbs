@@ -1,12 +1,10 @@
-<div>
-  <ul>
+<ul>
   {{#if session.isAuthenticated}}
-    <li>{{link-to 'posts' 'posts.index'}}</li>
-    <li>{{link-to 'new post' 'posts.new'}}</li>
-    <li>{{link-to 'log out' 'logout'}}</li>
+    <li class='nav-posts'>{{link-to 'posts' 'posts.index'}}</li>
+    <li class='nav-post-new'>{{link-to 'new post' 'posts.new'}}</li>
+    <li class='nav-logout'>{{link-to 'log out' 'logout'}}</li>
   {{else}}
-    <li>{{link-to 'create account' 'signup'}}</li>
-    <li>{{link-to 'log in' 'login'}}</li>
+    <li class='nav-signup'>{{link-to 'create account' 'signup'}}</li>
+    <li class='nav-login'>{{link-to 'log in' 'login'}}</li>
   {{/if}}
-  </ul>
-</div>
+</ul>

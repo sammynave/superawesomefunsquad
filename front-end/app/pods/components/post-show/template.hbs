@@ -1,4 +1,4 @@
-<div>
+<div class='post'>
   {{#if isCurrentUsersPost}}
     <div class='post-delete'>
       <span class='post-delete' {{action 'deletePost'}}>delete this post</span>
@@ -21,16 +21,18 @@
       {{#if commentsVisible}}
         hide
       {{else}}
-        {{pluralize-word comments.length 'comment'}}
+        {{pluralize comments.length 'comment'}}
       {{/if}}
     </span>
   </div>
   {{#if commentsVisible}}
     {{new-comment post=post}}
     <div class='comments'>
-      {{#each comments as |comment|}}
-        <span>{{comment.user.username}}</span>
-        <span>{{comment.body}}</span>
+      {{#each sortedComments as |comment|}}
+        {{comment-show
+          username=comment.user.username
+          body=comment.body
+          updatedAt=comment.updatedAt}}
       {{/each}}
     </div>
   {{/if}}
