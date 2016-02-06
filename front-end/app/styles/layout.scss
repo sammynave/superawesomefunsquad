@@ -1,4 +1,6 @@
 $border-radius: .2rem;
+$zen-columns: 12; // Set the number of columns in the grid.
+$zen-gutters: 10px;
 
 html {
   box-sizing: border-box;
@@ -72,22 +74,27 @@ button {
   }
 }
 
-.container-fluid {
-  padding-left: 1rem;
-  padding-right: 1rem;
+.container {
+  @include zen-grid-container();
 }
 
 .btn-primary {
+  @include zen-new-row();
+  @include zen-grid-item(12, 1);
+  margin-top: .5rem;
   color: $font-secondary;
   background-color: $c3;
   box-shadow: 0 0.1rem 0 .05rem $c5;
   text-shadow: 0.1rem 0.1rem $c5;
+  -webkit-tap-highlight-color: transparent;
   &:hover {
     text-shadow: 0.1rem 0.1rem $c5;
   }
   &:active {
-    background-color: $c4;
+    background-color: darken($c3, 5%);
+    color: darken($font-secondary, 5%);
     box-shadow: 0 0.05rem 0 .05rem $c5;
     text-shadow: -.05rem .05rem $c5;
   }
 }
+

@@ -10,6 +10,8 @@ export default Ember.Component.extend({
   isCurrentUsersPost: computed('session.currentUser.id', 'post.user.id', function(){
     return this.get('session.currentUser.id') == this.get('post.user.id');
   }),
+  sortedComments: computed.sort('comments', 'sortOrder'),
+  sortOrder: ['updatedAt:desc'],
   actions: {
     toggleComments() {
       this.toggleProperty('commentsVisible');

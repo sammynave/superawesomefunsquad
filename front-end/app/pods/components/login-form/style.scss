@@ -7,9 +7,7 @@ h3 {
 }
 
 input {
+  @include zen-new-row();
+  @include zen-grid-item(12, 1);
   margin-bottom: .5rem;
-}
-
-button {
-  margin-top: .5rem;
 }

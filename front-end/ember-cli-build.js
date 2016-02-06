@@ -35,7 +35,12 @@ module.exports = function(defaults) {
     minifyJS: { enabled: isProductionLikeBuild },
     tests: process.env.EMBER_CLI_TEST_COMMAND || !isProductionLikeBuild,
     hinting: process.env.EMBER_CLI_TEST_COMMAND || !isProductionLikeBuild,
-    sassOptions: { },
+    sassOptions: {
+      includePaths: [
+        'bower_components/normalize-css',
+        'bower_components/zen-grids/sass'
+      ]
+    },
     autoprefixer: {
       browsers: [ 'last 3 version','> 2%']
     }
@@ -55,7 +60,6 @@ module.exports = function(defaults) {
   // along with the exports of each module as its value.
 
   app.import('bower_components/fastclick/lib/fastclick.js');
-  app.import('bower_components/normalize-css/normalize.css');
 
   return app.toTree();
 };

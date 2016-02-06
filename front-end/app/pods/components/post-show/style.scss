@@ -1,15 +1,21 @@
 & {
-  border-bottom: .1rem solid $c1;
-  &:hover {
-    background-color: fade-out($c1, .9)
-  }
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  @include zen-new-row();
+  @include zen-grid-item(12, 1);
+}
+
+.post {
+  @include zen-new-row();
+  @include zen-grid-item(12, 1);
 }
 
 .post-body {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.post-footer {
+  @include zen-grid-item(12, 1);
+  text-align: right;
 }
 
 .img-holder {
@@ -40,4 +46,15 @@
 .comment-count {
   font-size: .5rem;
   cursor: pointer;
+  text-align: right;
+}
+
+.comments {
+  @include zen-new-row();
+  padding-top: 1rem;
+}
+.comment {
+  &:nth-child(even) {
+    background-color: fade-out($c1, .9)
+  }
 }
