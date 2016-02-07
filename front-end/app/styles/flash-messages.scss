@@ -1,5 +1,7 @@
 .alert {
   padding: 1rem;
+  @include zen-new-row();
+  @include zen-grid-item(12, 1);
 }
 
 .alert-success {

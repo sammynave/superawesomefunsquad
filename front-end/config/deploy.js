@@ -43,7 +43,8 @@ module.exports = function(deployTarget) {
     ENV.s3 = {
       accessKeyId: process.env.AWS_ACCESS_KEY,
       secretAccessKey: process.env.AWS_SECRET_KEY,
-      bucket: 'safs'
+      bucket: 'safs',
+      region: 'us-east-1'
     }
   }
 
