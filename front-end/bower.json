@@ -1,17 +1,18 @@
 {
   "name": "front-end",
   "dependencies": {
-    "ember": "2.3.0",
+    "ember": "2.3.1",
     "ember-cli-shims": "0.1.0",
     "ember-cli-test-loader": "0.2.2",
-    "ember-load-initializers": "0.1.7",
     "ember-qunit-notifications": "0.1.0",
     "jquery": "^2.2.0",
-    "loader.js": "^3.6.1",
     "normalize-css": "normalize.css#~3.0.3",
     "fastclick": "~1.0.6",
     "moment": ">= 2.11.1",
     "moment-timezone": ">= 0.5.0",
     "zen-grids": "~2.0.1"
+  },
+  "resolutions": {
+    "jquery": "^2.2.0"
   }
 }
