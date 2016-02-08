@@ -13,6 +13,7 @@
     "zen-grids": "~2.0.1"
   },
   "resolutions": {
-    "jquery": "^2.2.0"
+    "jquery": "^2.2.0",
+    "ember": "2.3.1"
   }
 }
